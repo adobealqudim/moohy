@@ -724,7 +724,6 @@ html[lang=en] .kb-short{font-size:13px}
 
     <div class="pc-loader" id="pcLoader">
       <div class="pc-loader-spinner"></div>
-      <div class="pc-loader-text" id="pcLoaderText">جاري تحميل العرض السينمائي... 0%</div>
     </div>
   </div>
 </section>
@@ -1770,8 +1769,6 @@ addEventListener('scroll', onScroll, { passive: true }); onScroll();
       img.src = getFramePath(i);
       img.onload = () => {
         loadedCount++;
-        const pct = Math.round((loadedCount / TOTAL_FRAMES) * 100);
-        if (pcLoaderText) pcLoaderText.textContent = (L === 'en') ? `Loading PC Sequence... ${pct}%` : `جاري تحميل العرض السينمائي... ${pct}%`;
         
         if (i === 0 && !isLoaded) {
           resizeCanvas();
